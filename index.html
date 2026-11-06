@@ -3,10 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Life@USTC E2E Reports</title>
+    <title>Life@USTC Report Archive</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.6; }
+      body { margin: 0; padding: clamp(1rem, 4vw, 3rem); }
+      main { max-width: 52rem; margin-inline: auto; }
+      h1, h2 { line-height: 1.2; text-wrap: balance; }
+      h1 { margin-top: 0; }
+      h2 { margin-top: 2rem; }
+      a { color: light-dark(#1754ab, #9dc5ff); text-underline-offset: .15em; overflow-wrap: anywhere; }
+      a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+      .notice { border-inline-start: .25rem solid currentColor; padding-inline-start: 1rem; }
+      li + li { margin-top: .35rem; }
+      code { overflow-wrap: anywhere; }
+    </style>
   </head>
   <body>
-    <h1>Life@USTC E2E HTML Reports</h1>
+    <main>
+    <h1>Life@USTC Report Archive</h1>
+    <p class="notice">These are retained historical E2E report snapshots. They do not describe the current server version or its test status. The newest snapshot below was published on <time datetime="2026-10-12">October 12, 2026</time>.</p>
+
+    <section aria-labelledby="current-reports">
+      <h2 id="current-reports">Current server reports</h2>
+      <p>Open the <a href="https://github.com/Life-USTC/server/actions/workflows/ci.yml">server CI runs</a>, choose the run for the commit or pull request you are reviewing, and inspect its checks. A report being available does not mean every check passed.</p>
+      <p>In the run's <strong>Artifacts</strong> section, download the relevant <code>playwright-report-&lt;domain&gt;</code> archive, extract it, and open <code>index.html</code>. GitHub requires sign-in to download artifacts. The <a href="https://github.com/Life-USTC/server/blob/main/.github/workflows/ci.yml">server workflow</a> currently retains these reports for 14 days; expired or cancelled runs may have no downloadable report.</p>
+    </section>
+
+    <section aria-labelledby="archived-reports">
+    <h2 id="archived-reports">Archived HTML snapshots</h2>
+    <p>These links preserve the reports as originally published.</p>
     <ul>
                 <li><a href="reports/38244157219/index.html">Run 38244157219</a></li>
                 <li><a href="reports/38148264733/index.html">Run 38148264733</a></li>
@@ -29,5 +54,7 @@
                 <li><a href="reports/37759661280/index.html">Run 37759661280</a></li>
                 <li><a href="reports/37755980919/index.html">Run 37755980919</a></li>
     </ul>
+    </section>
+    </main>
   </body>
 </html>
